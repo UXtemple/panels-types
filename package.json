@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": ".bin/test",
-    "prepublish": ".bin/compile",
-    "postpublish": ".bin/clean",
+    "prepublish": "if [ \"$NODE_ENV\" = production  ]; then .bin/compile; fi",
+    "postpublish": "if [ \"$NODE_ENV\" = production   ]; then .bin/clean; fi",
     "start": ".bin/start"
   },
   "repository": {
