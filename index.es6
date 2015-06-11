@@ -1,3 +1,2 @@
-export { default as Actions } from './actions';
-export { default as TypeRecord } from './type-record';
+export * as Actions from './actions';
 export { default as Store } from './store';

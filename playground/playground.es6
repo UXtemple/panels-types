@@ -5,7 +5,6 @@ import DUMMY_DATA from './dummy-data';
 class AppFlux extends Flux {
   constructor() {
     super();
-
     this.createActions('types', PanelsTypes.Actions);
     this.createStore('types', PanelsTypes.Store, this);
   }
