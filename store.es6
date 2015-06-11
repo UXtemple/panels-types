@@ -4,10 +4,12 @@ import I from 'seamless-immutable';
 const Type = ({app, name, component}) => ({app, name, component});
 
 export function load(state, types) {
-  return {
-    ...state,
-    ...I(types.map(Type)).asObject(type => [type.name, type])
-  }
+  return state.merge(I(types.map(Type)).asObject(type => [type.name, type]));
+
+//   return {
+//     ...state,
+//     ...I(types.map(Type)).asObject(type => [type.name, type])
+//   }
 }
 
 export default class TypesStore extends Store {
