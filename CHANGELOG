@@ -1,5 +1,10 @@
 # Change log
 
+## [0.2.1] - 2015-06-15
+### Changed
+
+- Leverage flummox's implicit state update on return from reducers.
+
 ## [0.2.0] - 2015-06-11
 ### Changed
 
