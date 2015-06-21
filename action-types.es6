@@ -1,0 +1,3 @@
+export const ADD = 'PANELS:TYPES:ADD';
+export const REMOVE = 'PANELS:TYPES:REMOVE';
+export const REMOVE_ALL = 'PANELS:TYPES:REMOVE_ALL';

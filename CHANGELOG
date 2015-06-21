@@ -1,13 +1,15 @@
 # Change log
 
+## [0.3.0] - 2015-06-21
+### Changed
+- Moved to redux.
+
 ## [0.2.1] - 2015-06-15
 ### Changed
-
 - Leverage flummox's implicit state update on return from reducers.
 
 ## [0.2.0] - 2015-06-11
 ### Changed
-
 - Removed actions class. Export raw functions.
 - Extracted stores functionality into raw functions too getting them ready to be stripped off their
   state soon.
@@ -18,7 +20,6 @@
 
 ## [0.1.0] - 2015-05-23
 ### Added
-
 - Flummox Actions and Store.
 - Immutable TypeRecord.
 - Playground with dummy data and a flux app.
