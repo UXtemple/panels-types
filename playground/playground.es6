@@ -19,4 +19,4 @@ console.log('Welcome to panels-types playground.');
 console.log('https://types.usepanels.com');
 console.log('Playground module', Playground);
 
-console.log('types:', redux.getState('types').types);
+console.log('types:', redux.getState().types);
