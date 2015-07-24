@@ -5,7 +5,7 @@ import assert from 'assert';
 
 describe('actions', () => {
   it('#add', () => {
-    const {type, app, component, name} = add(TYPE);
+    const {type, payload: {app, component, name}} = add(TYPE);
     assert(type === ADD, 'type');
     assert(app === TYPE.app, 'payload: app');
     assert(component === TYPE.component, 'payload: component');
@@ -13,14 +13,14 @@ describe('actions', () => {
   });
 
   it('#remove', () => {
-    const {type, app, name} = remove({app: TYPE.app, name: TYPE.name});
+    const {type, payload: {app, name}} = remove({app: TYPE.app, name: TYPE.name});
     assert(type === REMOVE, 'type');
     assert(app === TYPE.app, 'payload: app');
     assert(name === TYPE.name, 'payload: name');
   });
 
   it('#removeAll', () => {
-    const {type, app} = removeAll(TYPE.app);
+    const {type, payload: {app}} = removeAll(TYPE.app);
     assert(type === REMOVE_ALL, 'type');
     assert(app === TYPE.app, 'payload: app');
   });

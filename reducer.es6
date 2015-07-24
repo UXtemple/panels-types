@@ -1,7 +1,7 @@
 import { ADD, REMOVE, REMOVE_ALL } from './action-types';
 import i from 'seamless-immutable';
 
-export default function(state=i({}), {type, ...payload}) {
+export default function(state=i({}), {type, payload}) {
   switch (type) {
     case ADD: return add(state, payload);
     case REMOVE: return remove(state, payload);

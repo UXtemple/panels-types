@@ -1,17 +1,18 @@
 import * as PanelsTypes from '../index';
-import { createRedux } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
-const redux = createRedux({types: PanelsTypes.reducer});
+const reducer = combineReducers({types: PanelsTypes.reducer});
+const store = createStore(reducer);
 
-const { add } = PanelsTypes.Actions;
+const { add } = PanelsTypes.actions;
 const apps = [
   {app: 'app', name: 'panel1', component: class Panel1 { render() {} }},
   {app: 'app', name: 'panel2', component: class Panel2 { render() {} }},
   {app: 'app2', name: 'panel1', component: class Panel1 { render() {} }}
-].forEach(context => redux.dispatch(add(context)));
+].forEach(context => store.dispatch(add(context)));
 
 window.Playground = {
-  redux,
+  store,
   PanelsTypes
 };
 
@@ -19,4 +20,4 @@ console.log('Welcome to panels-types playground.');
 console.log('https://types.usepanels.com');
 console.log('Playground module', Playground);
 
-console.log('types:', redux.getState().types);
+console.log('types:', store.getState().types);

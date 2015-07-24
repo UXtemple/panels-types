@@ -7,7 +7,7 @@ import reducer from '../reducer';
 
 describe('reducer', () => {
   it('handles ADD', () => {
-    const newState = reducer(i({}), {type: ADD, ...TYPE});
+    const newState = reducer(i({}), {type: ADD, payload: TYPE});
     assert(newState.hasOwnProperty(TYPE.app), 'has app');
     assert(newState[TYPE.app].hasOwnProperty(TYPE.name), 'has name');
     assert(newState[TYPE.app][TYPE.name] === TYPE.component, 'has component');
@@ -20,7 +20,7 @@ describe('reducer', () => {
         [TYPE2.name]: TYPE2.component
       }
     });
-    const newState = reducer(iState, {type: REMOVE, app: TYPE.app, name: TYPE.name});
+    const newState = reducer(iState, {type: REMOVE, payload: {app: TYPE.app, name: TYPE.name}});
     assert(newState.hasOwnProperty(TYPE.app), 'has app');
     assert(!newState[TYPE.app].hasOwnProperty(TYPE.name), 'doesn\'t have TYPE.name');
     assert(newState[TYPE2.app].hasOwnProperty(TYPE2.name), 'has TYPE2.name');
@@ -32,7 +32,7 @@ describe('reducer', () => {
         [TYPE.name]: TYPE.component
       }
     });
-    const newState = reducer(iState, {type: REMOVE_ALL, app: TYPE.app});
+    const newState = reducer(iState, {type: REMOVE_ALL, payload: {app: TYPE.app}});
     assert(!newState.hasOwnProperty(TYPE.app), 'doesn\'t have app');
   });
 });
